@@ -22,8 +22,8 @@ public class PurchaseController {
   }
 
   @PostMapping
-  public void storePurchase(@RequestBody Purchase purchase) {
-    purchaseRepository.storePurchase(purchase);
+  public Purchase storePurchase(@RequestBody Purchase purchase) {
+    return purchaseRepository.storePurchase(purchase);
   }
 
   @GetMapping

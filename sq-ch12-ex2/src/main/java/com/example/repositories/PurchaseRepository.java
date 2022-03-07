@@ -16,9 +16,11 @@ public class PurchaseRepository {
     this.jdbc = jdbc;
   }
 
-  public void storePurchase(Purchase purchase) {
-    String sql = "INSERT INTO purchase VALUES (NULL, ?, ?)";
-    jdbc.update(sql, purchase.getProduct(), purchase.getPrice());
+  public Purchase storePurchase(Purchase purchase) {
+    String sql = "INSERT INTO purchase VALUES (?, ?, ?)";
+    jdbc.update(sql, purchase.getId(), purchase.getProduct(), purchase.getPrice());
+    
+    return purchase;    
   }
 
   public List<Purchase> findAllPurchases() {
