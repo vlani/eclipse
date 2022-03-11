@@ -9,6 +9,7 @@ public class Purchase {
   private int id;
   private String product;
   private BigDecimal price;
+  private String version="3.0";
 
   public int getId() {
     return id;
@@ -21,9 +22,17 @@ public class Purchase {
   public String getProduct() {
     return product;
   }
-
+  
   public void setProduct(String product) {
-    this.product = product;
+	    this.product = product;
+  }
+
+  public String getVersion() {
+	    return version;
+  }
+  
+  public void setVersion(String version) {
+    this.version = version;
   }
 
   public BigDecimal getPrice() {

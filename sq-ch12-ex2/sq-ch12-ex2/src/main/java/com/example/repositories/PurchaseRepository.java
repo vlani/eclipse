@@ -17,8 +17,8 @@ public class PurchaseRepository {
   }
 
   public Purchase storePurchase(Purchase purchase) {
-    String sql = "INSERT INTO purchase VALUES (?, ?, ?)";
-    jdbc.update(sql, purchase.getId(), purchase.getProduct(), purchase.getPrice());
+    String sql = "INSERT INTO purchase VALUES (?, ?, ?, ?)";
+    jdbc.update(sql, purchase.getId(), purchase.getProduct(), purchase.getPrice(), purchase.getVersion());
     
     return purchase;    
   }
@@ -31,6 +31,7 @@ public class PurchaseRepository {
       rowObject.setId(r.getInt("id"));
       rowObject.setProduct(r.getString("product"));
       rowObject.setPrice(r.getBigDecimal("price"));
+      rowObject.setVersion(r.getString("version"));
       return rowObject;
     };
 
