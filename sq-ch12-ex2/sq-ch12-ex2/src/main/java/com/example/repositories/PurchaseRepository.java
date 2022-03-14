@@ -31,7 +31,7 @@ public class PurchaseRepository {
       rowObject.setId(r.getInt("id"));
       rowObject.setProduct(r.getString("product"));
       rowObject.setPrice(r.getBigDecimal("price"));
-      rowObject.setVersion(r.getString("version"));
+      rowObject.setVersion("XXX");
       return rowObject;
     };
 
