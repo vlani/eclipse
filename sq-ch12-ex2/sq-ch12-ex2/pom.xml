@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>sq-ch12-ex2</artifactId>
+    <artifactId>example1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sq-ch12-ex2</name>
+    <name>example1</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -43,7 +43,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+			<plugin>
+   			  	<groupId>org.eclipse.jkube</groupId>
+    			 <artifactId>kubernetes-maven-plugin</artifactId>
+			     <version>1.7.0</version>
+ 			</plugin>
+			<plugin>
+			     <groupId>org.eclipse.jkube</groupId>
+			     <artifactId>openshift-maven-plugin</artifactId>
+			     <version>1.7.0</version>
+ 			</plugin>             
         </plugins>
     </build>
-
 </project>
