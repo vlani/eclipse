@@ -32,6 +32,7 @@ public class PurchaseRepository {
       rowObject.setProduct(r.getString("product"));
       rowObject.setPrice(r.getBigDecimal("price"));
       rowObject.setVersion(r.getString("version"));
+      //rowObject.setVersion("XXXX");
       return rowObject;
     };
 
