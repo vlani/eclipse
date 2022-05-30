@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    jkube.io/git-branch: master
+    jkube.io/git-commit: bdcbe44875a86d9ef8e72151f7568fd1f31c4e69
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/example-canary-v2
+    jkube.io/scm-tag: HEAD
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  labels:
+    expose: "true"
+    app: example-canary-v2
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+    group: com.example
+  name: example-canary-v2
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: example-canary-v2
+    provider: jkube
+    group: com.example

@@ -1,0 +1,22 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    jkube.io/git-branch: master
+    jkube.io/git-commit: bdcbe44875a86d9ef8e72151f7568fd1f31c4e69
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/example-canary-v2
+    jkube.io/scm-tag: HEAD
+  labels:
+    expose: "true"
+    app: example-canary-v2
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+    group: com.example
+  name: example-canary-v2
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: example-canary-v2

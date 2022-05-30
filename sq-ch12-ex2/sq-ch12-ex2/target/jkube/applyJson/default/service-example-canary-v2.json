@@ -1,0 +1,93 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "jkube.io/git-branch" : "master",
+      "jkube.io/git-commit" : "bdcbe44875a86d9ef8e72151f7568fd1f31c4e69",
+      "jkube.io/scm-tag" : "HEAD",
+      "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/example-canary-v2",
+      "prometheus.io/port" : "9779",
+      "prometheus.io/scrape" : "true"
+    },
+    "creationTimestamp" : "2022-05-30T12:49:20Z",
+    "labels" : {
+      "app" : "example-canary-v2",
+      "expose" : "true",
+      "group" : "com.example",
+      "provider" : "jkube",
+      "version" : "0.0.1-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/scm-tag" : { },
+            "f:jkube.io/scm-url" : { },
+            "f:prometheus.io/port" : { },
+            "f:prometheus.io/scrape" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:expose" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:internalTrafficPolicy" : { },
+          "f:ports" : {
+            "." : { },
+            "k:{\"port\":8080,\"protocol\":\"TCP\"}" : {
+              "." : { },
+              "f:name" : { },
+              "f:port" : { },
+              "f:protocol" : { },
+              "f:targetPort" : { }
+            }
+          },
+          "f:selector" : { },
+          "f:sessionAffinity" : { },
+          "f:type" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2022-05-30T12:49:20Z"
+    } ],
+    "name" : "example-canary-v2",
+    "namespace" : "default",
+    "resourceVersion" : "56670",
+    "uid" : "082537c1-4067-46ec-952d-dcdf671f8617"
+  },
+  "spec" : {
+    "clusterIP" : "10.217.5.204",
+    "ports" : [ {
+      "name" : "http",
+      "port" : 8080,
+      "protocol" : "TCP",
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app" : "example-canary-v2",
+      "group" : "com.example",
+      "provider" : "jkube"
+    },
+    "sessionAffinity" : "None",
+    "type" : "ClusterIP",
+    "clusterIPs" : [ "10.217.5.204" ],
+    "ipFamilies" : [ "IPv4" ],
+    "ipFamilyPolicy" : "SingleStack",
+    "internalTrafficPolicy" : "Cluster"
+  },
+  "status" : {
+    "loadBalancer" : { }
+  }
+}
